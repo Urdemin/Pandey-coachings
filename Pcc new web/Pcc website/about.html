@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Pandey Coaching</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="logo">📘 Pandey Coaching</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <h1>About Us</h1>
+  <p>Empowering Students Since 1999</p>
+</section>
+
+<section class="about-container">
+
+  <div class="info-card">
+    <h2>Our Mission</h2>
+    <p>
+      Our mission is to provide high-quality education and help students
+      build strong concepts, confidence, and discipline.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <h2>Our Vision</h2>
+    <p>
+      We aim to create a positive learning environment where every student
+      can achieve success and reach their full potential.
+    </p>
+  </div>
+
+  <div class="info-card full-width">
+    <h2>Our Journey</h2>
+    <p>
+      Pandey Coaching started with a simple goal — to make quality education
+      accessible and understandable for students. Over the years, the coaching
+      has guided hundreds of students toward academic success.
+    </p>
+  </div>
+
+</section>
+
+<script>
+
+const toggleBtn = document.getElementById("theme-toggle");
+
+// APPLY saved theme on every page load
+if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark");
+    if(toggleBtn){
+        toggleBtn.innerHTML = "☀️";
+    }
+}
+
+// TOGGLE
+if(toggleBtn){
+    toggleBtn.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark");
+
+        if(document.body.classList.contains("dark")){
+            toggleBtn.innerHTML = "☀️";
+            localStorage.setItem("theme", "dark");
+        } else {
+            toggleBtn.innerHTML = "🌙";
+            localStorage.setItem("theme", "light");
+        }
+
+    });
+}
+
+</script>
+
+<footer>
+  <p>© 2026 Pandey Coaching | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
